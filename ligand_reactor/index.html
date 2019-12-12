@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+ <meta charset="UTF-8">
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Lignad Reaction Predictor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="loading">
+			<img src="images/loading.gif">
+			<div id="loadingText">Predicting in progress.</div>
+		</div>
+		<div id="tab_button">
+		<!-- Tab -->
+			<table id="tabTable">
+				<tr>
+					<td><a href="#tab1_content" id="tab1" class="tab">Step1</a></td>
+					<td><a href="#tab2_content" id="tab2" class="tab">Step2</a></td>
+				</tr>
+			</table>
+		</div>
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Ligand Reaction Predictor</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="introduce.html">Introduce LRP</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner minner">
+							<form>
+								<div class="introduce">
+									<h3 class="itr">Ligand Reaction Predictor(LRP) is</h3>
+									<center><p>A website that helps the study of the ligand by drewing the predicted response results right away when new ligand emerges. The prediction information provided by this website is not a solid result of 100 percent, so please use only for reference when you use it for your research.<br>
+									If this is your first time using this site, Click on the tab that looks like top and use it step by step, otherwise scroll down and use them.</center></p>
+								</div>
+								<hr/>
+								<a id="tab1_content"></a>
+								<div class="tutorial">
+									<h3 class="slf">Step1. Select File</h3>
+									<p>
+									Step1 is the file selection step.<br> 
+									Click the button labeled Select File. And Browse the file containing the SMILES value and select that.<br>
+									On this occasion, selected files can only be in .txt or .smi format. And the SMILES value entered in the file is recognized as one SMILES per line.<br>
+									<h4>※SMILES : One of the ways in which the structure of a chemical is expressed as a string.<br>
+									(ex. N#CC(=Cc1cc(Br)c(c(c1)C(C)(C)C)O)C#N)</h4>
+									</p>
+								</div>
+								<div class="file_input">
+									<label class="button icon solid fa-save">
+										Select File
+										<input type="file" name="upload_file" id="upload_file" onchange="javascript:document.getElementById('file_route').value=this.value">
+									</label>
+									<input type="text" readonly="readonly" title="File Route" id="file_route">
+								</div>
+								<div>
+									<div class="tutorial">
+										<hr/>
+										<a id="tab2_content"></a>
+										<h3 class="slf2">Step2. Select a type of Learning Machine</h3>
+										<p>
+										Step2 is the learning machine selection stage. CNN and DMLP are types of deep learning algorithms, each learning the ligand data in different ways.<br>
+										Select the prediction type in the desired learning machine, then click the 'PREDICTION' button. It takes about <b>20 seconds to 1 minute</b> for the results to be outputed, depending on the number of choices of the prediction type.<br><br>
+										On this occasion, prediction type can be double-selected but the learning machine type cannot be double-selected. For example, if you select the prediction type for the CNN learning machine, you cannot select the prediction type for the DMLP learning machine.<br>
+										When you does click this <a id="tab3" class="auc_tab">AUC</a> button, you can do check the accuracy of the learning rate.
+										</p>
+									</div>
+									
+									<div class="tutorial">
+										<!-- <a id="auc"></a> -->
+										<div id="aucH">
+											<hr/>
+											<p>
+											The graph below shows the accuracy for each learning machine. Performance of CNN model is 74%, 79% and 71% repectively, and performance of DMLP model is 50%, 50% and 50% repectively. The CNN model is relatively accurate more than the DMLP model. (Hover over the graph to zoom in.)
+											</p>
+										</div>
+										<div id="css-close"></div>
+										<div id="css_tabs">
+											<script>
+												function accuracy(e, platform_type) {
+													var active = "btn-accuracy-active";
+													$(e).addClass(active).siblings().removeClass(active);
+												}
+											</script>
+											<input id="cnnAuc" type="radio" name="accuracy" checked="checked" />
+											<input id="dmlpAuc" type="radio" name="accuracy" />
+											<label for="cnnAuc">CNN Accuracy</label>
+											<label for="dmlpAuc">DMLP Accuracy</label>
+											<div class="ca">
+												<table>
+													<tbody>
+														<tr>
+															<td>Receptor Type & Action</td>
+															<td>Action Type</td>
+															<td>Receptor Type</td>
+														</tr>
+														<tr>
+															<td><img src="images/CNN_A_plan.png" class="img1" width="100%"></td>
+															<td><img src="images/cnn_p_action.png" class="img2" width="100%"></td>
+															<td><img src="images/cnn_p_family.png" class="img3" width="100%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div class="da">
+												<table>
+													<tbody>
+														<tr>
+															<td>Receptor Type & Action</td>
+															<td>Action Type</td>
+															<td>Receptor Type</td>
+														</tr>
+														<tr>
+															<td><img src="images/DMLP_A.png" class="img1" width="100%"></td>
+															<td><img src="images/DMLP_P_Action.png" class="img2" width="100%"></td>
+															<td><img src="images/DMLP_P_family.png" class="img3" width="100%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+
+									<section class="tiles">
+										<article class="style1" id="as1">
+											<span class="image">
+												<img src="images/pic01.jpg" alt="" />
+											</span>
+											<a>
+												<h2>CNN</h2>
+												<div class="content" id="cnn">
+													<input type="checkbox" id="Caplan" name="Cplan">
+													<label for="Caplan">Receptor & Action Type</label><br>
+													<input type="checkbox" id="Cpaction" name="Cplan">
+													<label for="Cpaction">Action Type</label><br>
+													<input type="checkbox" id="Cpfamily" name="Cplan">
+													<label for="Cpfamily">Receptor Type</label><br>
+												</div>
+											</a>
+										</article>
+										<article class="style2" id="as2">
+											<span class="image">
+												<img src="images/pic02.jpg" alt="" />
+											</span>
+											<a>
+												<h2>DMLP</h2>
+												<div class="content" id="dmlp">
+													<input type="checkbox" id="Daplan" name="Dplan">
+													<label for="Daplan">Receptor & Action Type</label><br>
+													<input type="checkbox" id="Dpaction" name="Dplan">
+													<label for="Dpaction">Action Type</label><br>
+													<input type="checkbox" id="Dpfamily" name="Dplan">
+													<label for="Dpfamily">Receptor Type</label><br>
+												</div>
+											</a>
+										</article>
+										<article class="buttons">
+											<ul class="actions fit">
+												<li><input type="button" class="button fit" name="bt" id="bt" value="Prediction"></li>
+											</ul>
+										</article>
+									</section>
+								</div>
+							</form>
+							<div>
+									<fieldset class="result">
+										<legend class="rlegend"><h2 class="h2">Prediction</h2></legend>
+											<p id="result"></p>
+									</fieldset>
+							</div>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner_footer">
+							<section>
+								<h2>Team_Information</h2>
+									<div class="fields">
+										<div class="field">
+											Title : Ligand Reation Predictor Using a Machine Learning |<br>
+											Team member : Hyeonseok Kim, Hyerim Jeong |<br>
+											Major : Cultural Content undergraduate - major of Multimedia | Univ. number : 134901, 152976<br>
+											50, Daehak-ro, Yeosu-si, Jeollanam-do, Republic of Korea
+										</div>
+									</div>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>Copy &copy; Hyeonseok Kim, Hyerim Jeong, All Rights Reserved</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/check.js"></script>
+			<script src="assets/js/tutorial.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				$(window).on('beforeunload', function() {
+					$(window).scrollTop(0); 
+				});
+			</script>
+	</body>
+</html>

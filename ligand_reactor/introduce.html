@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+	<title>Ligand Reaction Predictor</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+ </head>
+ <body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo -->
+				<a href="index.html" class="logo">
+					<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Ligand Reaction Predictor</span>
+				</a>
+
+				<!-- Nav -->
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<h2>Menu</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="introduce.html">Introduce LRP</a></li>
+				</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<h1>Ligand Reaction Predictor</h1>
+				<p>Ligand Reaction Predictor(LRP) is a website that helps the study of the ligand by drewing the predicted response results right away when new ligand emerges. Ligand means a molecule of Antibody / Hormone / Drug, etc. that binds to a receptor. When the body is taken as an example, receptors means to cells in the body,and a substance that reacts when combined with that cell is called ligand. When Ligand combines with a receptor, it generates various reactions. </p>
+				<p>The LRP is learned these response results from two learning machines in machine learning. And based on learning information, the predictor is executed to derive the predict response results when a new ligand emerges. The following are how LRP is used and definitions of terms.</p>
+				<p id="Subtitle"><br><b>How to use LRP:</b></p>
+				<p>1) Select the file containing the SMILES values.<br>
+				   2) Select the desired type of learning machine (CNN and DMLP cannot be selected in duplicated.)<br>
+				   3) Select the kind of learning method what you want in the selected learning machine.<br>
+				   &nbsp;&nbsp; &gt;&gt; Action types are divided into two types: Agonist and Inhibition.<br>
+				   &nbsp;&nbsp; &gt;&gt; Receptor types are divided into nine categories: catalytic_receptor, enzyme, and gpcr.<br>
+				   <table id="explanation">
+					<tr><!-- 첫번째 줄 시작 -->
+						<td>Receptor & Action Type</td>
+						<td>Outputs in the form of&nbsp;&nbsp;<b>'Receptor_Action Type'</b></td>
+					</tr><!-- 첫번째 줄 끝 -->
+					<tr><!-- 두번째 줄 시작 -->
+						<td>Action Type</td>
+						<td>Output only <b>'Action type'</b></td>
+					</tr><!-- 두번째 줄 끝 -->
+					<tr><!-- 두번째 줄 시작 -->
+						<td>Receptor Type</td>
+						<td>Output only <b>'Receptor type'</b></td>
+					</tr>
+				   </table>
+				   4) Click the 'Prediction' button.<br>
+				   5) After a wait time (approximately 30 seconds), the result is output in the 'Prediction' pane.</p>
+				   <p id="Subtitle"><br><b>Difinitions of Terms:</b></p>
+				   <p><b>SMILES</b> &nbsp;:&nbsp; SMILES(Simplified Molecular Input Line Entry System) is one of the ways of which the structure of chemicals is represented as a character string, like WLN, ROSDAL, etc.<br>
+				   <b>Agonist</b> &nbsp;:&nbsp; A ligand that binds to a receptor and alters the state of the receptor that causes a biological response.<br>
+				   <b>Inhibition</b> &nbsp;:&nbsp; Inhibitor means all substances, including antagonist, that have a fundamental deterrent effect.<br>
+				   <b>Catalytic Receptor</b> &nbsp;:&nbsp; Catalytic receptors are cell-surface proteins, usually dimeric in nature, which encompass ligand binding and functional domains in one polypeptide chain.<br>
+				   <b>Enzyme</b> &nbsp;:&nbsp; Enzymes are protein catalysts facilitating the conversion of substrates into products.<br>
+				   <b>GPCR</b> &nbsp;:&nbsp; G protein-coupled receptors (GPCRs) are the largest class of membrane proteins in the human genome.<br>
+				   <b>LGIC</b> &nbsp;:&nbsp; Ligand-gated ion channels (LGICs) are integral membrane proteins that contain a pore which allows the regulated flow of selected ions across the plasma membrane.<br>
+				   <b>VGIC</b> &nbsp;:&nbsp; The voltage-gated ion channels and their structural relatives comprise a superfamily encoded by at least 143 genes in the human genome and are therefore one of the largest superfamilies of signal transduction proteins, following the G protein-coupled receptors and the protein kinases in number.<br>
+				   <b>NHR</b> &nbsp;:&nbsp; Nuclear receptors are specialised transcription factors with commonalities of sequence and structure, which bind as homo- or heterodimers to specific consensus sequences of DNA (response elements) in the promoter region of particular target genes.<br>
+				   <b>Other IC</b> &nbsp;:&nbsp; Other than LGIC and VGICs, other ion channels. It belongs that Aquaporins, Chloride channels, Store-operated ion channels to this ion channels. <br>
+				   <b>Transporter</b> &nbsp;:&nbsp; Transporters (membrane transport/carrier proteins) are specialized membrane-spanning proteins that assist in the movement of ions, peptides, small molecules, lipids and macromolecules across a biological membrane.<br>
+				   <b>Other Protein</b> &nbsp;:&nbsp;  It belongs that Anti-infective targets, Bromodomain-containing proteins, Chaperone proteins, GEFs, etc. to this proteins.<br><br><br><br><br><br></p>
+				   <p>Reference :<br>
+				   IUPHAR/BPS Guide to PHARMACOLOGY<br>
+				   https://lsy5518.wordpress.com/2014/11/10/1198/(Personal blog from South Korean)<br>
+				   TOCRIS a biotechne brand<br>
+				   etc.<br></p>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<section>
+					<h2>Team_Information</h2>
+					<div class="fields">
+						<div class="field">
+							Title : Ligand Reation Predictor Using a Machine Learning |<br>
+							Team member : Hyeonseok Kim, Hyerim Jeong |<br> 
+							Major : Cultural Content undergraduate - major of Multimedia | Univ. number : 134901, 152976<br>
+							50, Daehak-ro, Yeosu-si, Jeollanam-do, Republic of Korea
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>Follow</h2>
+					<ul class="icons">
+						<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</section>
+				<ul class="copyright">
+					<li>Copy &copy; Hyeonseok Kim, Hyerim Jeong, All Rights Reserved</li>
+				</ul>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
